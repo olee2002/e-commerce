@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/olee2002.github.i/e-commerce/static/css/main.af6cc072.chunk.css",
+    "main.js": "/olee2002.github.i/e-commerce/static/js/main.67b3de06.chunk.js",
+    "main.js.map": "/olee2002.github.i/e-commerce/static/js/main.67b3de06.chunk.js.map",
+    "runtime-main.js": "/olee2002.github.i/e-commerce/static/js/runtime-main.426731bc.js",
+    "runtime-main.js.map": "/olee2002.github.i/e-commerce/static/js/runtime-main.426731bc.js.map",
+    "static/js/2.fefdf28d.chunk.js": "/olee2002.github.i/e-commerce/static/js/2.fefdf28d.chunk.js",
+    "static/js/2.fefdf28d.chunk.js.map": "/olee2002.github.i/e-commerce/static/js/2.fefdf28d.chunk.js.map",
+    "index.html": "/olee2002.github.i/e-commerce/index.html",
+    "precache-manifest.de450df238ef1b5eb716c91b886fcd8d.js": "/olee2002.github.i/e-commerce/precache-manifest.de450df238ef1b5eb716c91b886fcd8d.js",
+    "service-worker.js": "/olee2002.github.i/e-commerce/service-worker.js",
+    "static/css/main.af6cc072.chunk.css.map": "/olee2002.github.i/e-commerce/static/css/main.af6cc072.chunk.css.map",
+    "static/js/2.fefdf28d.chunk.js.LICENSE.txt": "/olee2002.github.i/e-commerce/static/js/2.fefdf28d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.426731bc.js",
+    "static/js/2.fefdf28d.chunk.js",
+    "static/css/main.af6cc072.chunk.css",
+    "static/js/main.67b3de06.chunk.js"
+  ]
+}
