@@ -5,11 +5,33 @@ import './Directory.scss'
 
 
 const list = [
-   { title: 'HATS', subtitle: 'SHOP NOW'},
-   { title: 'JACKETS', subtitle: 'SHOP NOW'},
-   { title: 'SHOES', subtitle: 'SHOP NOW'},
-   { title: 'WOMENS', subtitle: 'SHOP NOW'},
-   { title: 'MENS', subtitle: 'SHOP NOW'},
+   {
+      title: 'hats',
+      imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+      id: 1
+    },
+    {
+      title: 'jackets',
+      imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+      id: 2
+    },
+    {
+      title: 'sneakers',
+      imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+      id: 3
+    },
+    {
+      title: 'womens',
+      imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+      size: 'large',
+      id: 4
+    },
+    {
+      title: 'mens',
+      imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+      size: 'large',
+      id: 5
+    }
 ]
 
 export default function Directory() {
@@ -18,10 +40,9 @@ export default function Directory() {
 
    return (
       <div className='directory-menu'>
-      {cards.map((card)=>
-      <div className='menu-item'>
-        <MenuItem  card={card}/>
-  </div>)}
-  </div>
+      {cards.map(({ title, imageUrl, id, size }) => (
+        <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+      ))}
+    </div>
    )
 }
