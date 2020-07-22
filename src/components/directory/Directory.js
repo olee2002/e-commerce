@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import MenuItem from '../menu-items/MenuItem'
+import MenuItem from '../menu-item'
 import './Directory.scss'
 
 

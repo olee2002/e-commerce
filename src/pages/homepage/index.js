@@ -1,6 +1,6 @@
 import React, { useState }  from 'react'
 
-import Directory from '../directory/Directory'
+import Directory from '../../components/directory/Directory'
 import './HomePage.scss' 
 
 export default function HomePage() {
