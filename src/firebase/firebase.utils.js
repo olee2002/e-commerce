@@ -2,14 +2,16 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
+
 const config = {
-   apiKey: '',
-   authDomain:'',
-   databaseURL: '',
-   projectId:'',
-   storageBucket:'',
-   messagingSenderId:'',
-   appId:''
+   apiKey: "AIzaSyAeCfS0D7Yn4QimKmoIVU7YkByHhqyPcXg",
+   authDomain: "shopping-cart-2479c.firebaseapp.com",
+   databaseURL: "https://shopping-cart-2479c.firebaseio.com",
+   projectId: "shopping-cart-2479c",
+   storageBucket: "shopping-cart-2479c.appspot.com",
+   messagingSenderId: "630143016029",
+   appId: "1:630143016029:web:16d38f1604356f807ac1b4",
+   measurementId: "G-9S5S9ZKGVG"
 }
 
 firebase.inializeApp(config);
