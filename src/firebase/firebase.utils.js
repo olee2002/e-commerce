@@ -2,7 +2,6 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
-
 const config = {
    apiKey: "AIzaSyAeCfS0D7Yn4QimKmoIVU7YkByHhqyPcXg",
    authDomain: "shopping-cart-2479c.firebaseapp.com",
