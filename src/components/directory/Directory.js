@@ -45,8 +45,8 @@ export default function Directory() {
 
    return (
       <div className='directory-menu'>
-      {cards.map(({ title, imageUrl, id, size }) => (
-        <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+      {cards.map(({ title, imageUrl, id, linkUrl, size }) => (
+        <MenuItem key={id} title={title} imageUrl={imageUrl} linkUrl={linkUrl} size={size} />
       ))}
     </div>
    )
