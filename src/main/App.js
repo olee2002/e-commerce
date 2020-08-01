@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import './App.css';
 
-import HomePage from '../pages/homepage';
+import HomePage from '../pages/homepage/homepage';
 import ShopPage from '../pages/shop/shop';
 import SignInAndSignUpPage from '../pages/sign-in/sign-in-up';
 import Header from '../components/header/header';
@@ -12,10 +12,14 @@ function App() {
    const [currentUser, setCurrentUser]=useState('')
    const [displayName, setDisplayName]=useState('stranger');
 
+   const getSignInInfo=(displayName)=>{
+      console.log('getSignInInfo displayName',displayName)
+      setDisplayName(displayName);
+   }
    useEffect(()=>{
-      const displayNameStored = localStorage.getItem('displayName');
-      setDisplayName(displayNameStored);
-   })
+      getSignInInfo(displayName);
+      console.log('I ran?')
+   },[displayName]);
 
   return (
     <div>
@@ -24,7 +28,7 @@ function App() {
         <Route exact path='/' component={HomePage} />
         <Route exact path='/e-commerce' component={HomePage} />
         <Route exact path='/shop' component={ShopPage} />
-        <Route exact path='/signin' component={SignInAndSignUpPage} />
+        <Route exact path='/signin' render={()=><SignInAndSignUpPage getSignInInfo={getSignInInfo} />} />
       </Switch>
     </div>
   );

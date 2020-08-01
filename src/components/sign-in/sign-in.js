@@ -7,7 +7,7 @@ import { signInWithGoogle } from '../../firebase/firebase.utils';
 
 import './sign-in.scss';
 
-const SignIn = () => {
+const SignIn = ({ getSignInInfo }) => {
 
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
@@ -15,8 +15,16 @@ const SignIn = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
+    getSignInInfo();
     history.push('/')
   };
+
+  const handleGoogleSignIn = async () => {
+   const displayName = await signInWithGoogle();
+   console.log('did I run?', displayName)
+   getSignInInfo(displayName);
+   history.push('/')
+  }
 
   const handleChange = event => {
     const { value, name } = event.target;
@@ -51,7 +59,7 @@ const SignIn = () => {
           />
            <div className='buttons'>
           <CustomButton type='submit'> Sign in </CustomButton>
-          <CustomButton onClick={signInWithGoogle} isGoogleSignIn type='submit'>
+          <CustomButton onClick={handleGoogleSignIn} isGoogleSignIn type='submit'>
               Sign in with Google
             </CustomButton>
             </div>

@@ -30,8 +30,6 @@ export const createUserProfileDocument = async (userAuth, additionalData)=>{
             createdAt,
             ...additionalData
          })
-
-         console.log('setUSer',setUser);
       } catch(error){
          console.log('error creating user', error.message);
          console.log('create uuser got caught');
@@ -51,6 +49,7 @@ export const signInWithGoogle = async() => {
       console.log('user inside', loginInfo.user.displayName)
       localStorage.setItem('displayName', loginInfo.user.displayName)
    }
+   return loginInfo.user.displayName;
 }
 
 export default firebase;

@@ -5,9 +5,9 @@ import SignUp from '../../components/sign-up/sign-up';
 
 import './sign-in.scss';
 
-const SignInAndSignUpPage = () => (
+const SignInAndSignUpPage = ({ getSignInInfo }) => (
   <div className='sign-in-and-sign-up'>
-    <SignIn />
+    <SignIn getSignInInfo={getSignInInfo} />
     <SignUp />
   </div>
 );
