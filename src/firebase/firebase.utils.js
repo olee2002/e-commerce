@@ -12,14 +12,14 @@ const config = {
    appId: "1:630143016029:web:16d38f1604356f807ac1b4",
    measurementId: "G-9S5S9ZKGVG"
 }
-
-firebase.inializeApp(config);
+console.log('firebase', firebase)
+firebase.initializeApp(config);
 
 export const createUserProfileDocument = async (userAuth, additionalData)=>{
    if(!userAuth) return;
 
    const userRef = firestore.doc(`users/${userAuth.uid}`);
-   const snapshot = await userRef.get();
+   const snapShot = await userRef.get();
    if(!snapShot.exists){
       const { displayName, email } = userAuth;
       const createdAt = new Date();
@@ -39,7 +39,7 @@ export const createUserProfileDocument = async (userAuth, additionalData)=>{
 }
 
 export const auth = firebase.auth();
-export const firestore = forebase.firestore();
+export const firestore = firebase.firestore();
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
