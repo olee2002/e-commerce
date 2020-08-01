@@ -11,7 +11,7 @@ const SignIn = () => {
 
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
-   const history = useHistory();
+   const history = useHistory();  
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -51,7 +51,7 @@ const SignIn = () => {
           />
            <div className='buttons'>
           <CustomButton type='submit'> Sign in </CustomButton>
-          <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+          <CustomButton onClick={signInWithGoogle} isGoogleSignIn type='submit'>
               Sign in with Google
             </CustomButton>
             </div>
