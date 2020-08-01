@@ -4,9 +4,9 @@ import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
 import HomePage from '../pages/homepage';
-import ShopPage from '../pages/shop';
-import SignInAndSignUpPage from '../pages/sign-in';
-import Header from '../components/header';
+import ShopPage from '../pages/shop/shop';
+import SignInAndSignUpPage from '../pages/sign-in/sign-up';
+import Header from '../components/header/header';
 
 function App() {
    const [currentUser, setCurrentUser]=useState('')
