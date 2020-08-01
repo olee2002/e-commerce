@@ -12,12 +12,11 @@ const config = {
    appId: "1:630143016029:web:16d38f1604356f807ac1b4",
    measurementId: "G-9S5S9ZKGVG"
 }
-console.log('firebase', firebase)
+
 firebase.initializeApp(config);
 
 export const createUserProfileDocument = async (userAuth, additionalData)=>{
    if(!userAuth) return;
-
    const userRef = firestore.doc(`users/${userAuth.uid}`);
    const snapShot = await userRef.get();
    if(!snapShot.exists){
@@ -25,14 +24,17 @@ export const createUserProfileDocument = async (userAuth, additionalData)=>{
       const createdAt = new Date();
 
       try {
-         await userRef.set({
+        const setUser =  await userRef.set({
             displayName,
             email,
             createdAt,
             ...additionalData
          })
+
+         console.log('setUSer',setUser);
       } catch(error){
          console.log('error creating user', error.message);
+         console.log('create uuser got caught');
       }
    }
    return userRef;
