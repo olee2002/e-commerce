@@ -24,7 +24,7 @@ const Header = ({ displayName, getSignInInfo, hidden }) => {
             <div className='option' to='/e-commerce/signin'>
                {displayName && `Welcome ${displayName}!`}
             </div>
-            <Link className='option' to='/e-commerce/shop'>
+            <Link className='option' to='/shop'>
                SHOP
             </Link>
             {displayName ? (

@@ -28,12 +28,10 @@ function App() {
    })
 
    const getSignInInfo=(displayName)=>{
-      console.log('getSignInInfo displayName',displayName)
       setDisplayName(displayName);
    }
    useEffect(()=>{
       getSignInInfo(displayName);
-      console.log('I ran?')
    },[displayName]);
 
   return (
@@ -42,7 +40,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/e-commerce' component={HomePage} />
-        <Route exact path='/e-commerce/shop' component={ShopPage} />
+        <Route exact path='/shop' component={ShopPage} />
         <Route exact path='/e-commerce/signin' render={()=><SignInAndSignUpPage getSignInInfo={getSignInInfo} />} /> 
         <Route exact path='/e-commerce/contact' component={Contact} />
         <Route exact path='/e-commerce/checkout' component={CheckoutPage} />

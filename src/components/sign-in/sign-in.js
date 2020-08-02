@@ -21,7 +21,6 @@ const SignIn = ({ getSignInInfo }) => {
 
   const handleGoogleSignIn = async () => {
    const displayName = await signInWithGoogle();
-   console.log('did I run?', displayName)
    getSignInInfo(displayName);
    history.push('/')
   }
