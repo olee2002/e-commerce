@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
+import CartIcon from '../cart-icon/cart-icon';
+import CartDropdown from '../cart-dropdown/cart-dropdown';
 import { ReactComponent as Logo } from '../../assets/crown.svg'
 import { auth } from '../../firebase/firebase.utils'
 
 import './header.scss'
 
-const Header = ({ displayName, getSignInInfo }) => {
+const Header = ({ displayName, getSignInInfo, hidden }) => {
    const handleLogout = () => {
       localStorage.clear();
       getSignInInfo('');
@@ -35,6 +37,8 @@ const Header = ({ displayName, getSignInInfo }) => {
             <Link className='option' to='/e-commerce/signin'>
                CONTACT
             </Link>
+            <CartIcon />
+            {!hidden ? null : <CartDropdown />}
          </div>
       </div>
    )
