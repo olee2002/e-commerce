@@ -30,9 +30,9 @@ const CheckoutPage = ({ cartItems, total }) => (
         <span>Remove</span>
       </div>
     </div>
-    {cartItems.map(cartItem => (
+    {cartItems ? cartItems.length>0 && cartItems.map(cartItem => (
       <CheckoutItem key={cartItem.id} cartItem={cartItem} />
-    ))}
+    )): <div style={{ marginTop: 20 }}>Current No Item is selected. Please go back to the shop page!</div>}
     <div className='total'>TOTAL: ${total}</div>
   </div>
 );

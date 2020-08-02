@@ -7,6 +7,7 @@ import './App.css';
 
 import HomePage from '../pages/homepage/homepage';
 import ShopPage from '../pages/shop/shop';
+import Contact from '../pages/contact/contact';
 import SignInAndSignUpPage from '../pages/sign-in/sign-in-up';
 import Header from '../components/header/header';
 import CheckoutPage from '../pages/checkout/checkout';
@@ -43,6 +44,7 @@ function App() {
         <Route exact path='/e-commerce' component={HomePage} />
         <Route exact path='/e-commerce/shop' component={ShopPage} />
         <Route exact path='/e-commerce/signin' render={()=><SignInAndSignUpPage getSignInInfo={getSignInInfo} />} /> 
+        <Route exact path='/e-commerce/contact' component={Contact} />
         <Route exact path='/e-commerce/checkout' component={CheckoutPage} />
       </Switch>
     </div>

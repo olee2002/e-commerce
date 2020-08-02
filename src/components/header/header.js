@@ -34,10 +34,10 @@ const Header = ({ displayName, getSignInInfo, hidden }) => {
                   SIGN-IN
                </Link>
             )}
-            <Link className='option' to='/e-commerce/signin'>
+            <Link className='option' to='/e-commerce/contact'>
                CONTACT
             </Link>
-            <CartIcon />
+            <Link className='option' to='/e-commerce/checkout'><CartIcon /></Link>
             {!hidden ? null : <CartDropdown />}
          </div>
       </div>
