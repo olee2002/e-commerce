@@ -46,7 +46,7 @@ provider.setCustomParameters({ prompt: 'select_account' });
 export const signInWithGoogle = async() => {
    const loginInfo = await auth.signInWithPopup(provider);
    if(loginInfo && loginInfo.user){
-      console.log('user inside', loginInfo.user.displayName)
+      console.log('log', loginInfo.user)
       localStorage.setItem('displayName', loginInfo.user.displayName)
    }
    return loginInfo.user.displayName;

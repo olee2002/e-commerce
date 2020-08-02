@@ -7,10 +7,18 @@ import HomePage from '../pages/homepage/homepage';
 import ShopPage from '../pages/shop/shop';
 import SignInAndSignUpPage from '../pages/sign-in/sign-in-up';
 import Header from '../components/header/header';
+import { auth } from '../firebase/firebase.utils'
 
 function App() {
    const [currentUser, setCurrentUser]=useState('')
-   const [displayName, setDisplayName]=useState('stranger');
+   const [displayName, setDisplayName]=useState('');
+
+   useEffect(()=>{
+      // check if user is already logged in and display it in header
+      auth.onAuthStateChanged((user) =>{
+         user && setDisplayName(user.displayName);
+      })
+   })
 
    const getSignInInfo=(displayName)=>{
       console.log('getSignInInfo displayName',displayName)
@@ -23,12 +31,12 @@ function App() {
 
   return (
     <div>
-      <Header currentUser={currentUser} displayName={displayName}/>
+      <Header displayName={displayName} getSignInInfo={getSignInInfo} />
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/e-commerce' component={HomePage} />
-        <Route exact path='/shop' component={ShopPage} />
-        <Route exact path='/signin' render={()=><SignInAndSignUpPage getSignInInfo={getSignInInfo} />} />
+        <Route exact path='/e-commerce/shop' component={ShopPage} />
+        <Route exact path='/e-commerce/signin' render={()=><SignInAndSignUpPage getSignInInfo={getSignInInfo} />} />
       </Switch>
     </div>
   );
