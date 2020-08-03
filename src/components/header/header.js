@@ -28,14 +28,14 @@ const Header = ({ displayName, getSignInInfo, hidden }) => {
   
    return (
       <div className='header'>
-         <Link className='logo-container' to='/'>
+         <Link className='logo-container' to='/e-commerce'>
             <Logo className='logo' />
          </Link>
          <div className='options'>
             <div className='option' to='/e-commerce/signin'>
                {displayName && `Welcome ${displayName}!`}
             </div>
-            <Link className='option' to='/shop'>
+            <Link className='option' to='/e-commerce/shop'>
                SHOP
             </Link>
             <Link className='option' to='/e-commerce/contact'>
