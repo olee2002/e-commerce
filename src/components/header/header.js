@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import CartIcon from '../cart-icon/cart-icon';
 import CartDropdown from '../cart-dropdown/cart-dropdown';
@@ -9,11 +10,16 @@ import { auth } from '../../firebase/firebase.utils'
 import './header.scss'
 
 const Header = ({ displayName, getSignInInfo, hidden }) => {
+   const cartItems = useSelector(state=>state.cart.cartItems);
+   const [ hide, setHide ] = useState(false);
    const handleLogout = () => {
       localStorage.clear();
       getSignInInfo('');
       auth.signOut();
       alert('Signing you out!');
+   }
+   const handleHover = ()=>{
+      return cartItems && cartItems.length===0 && setHide(true);
    }
    return (
       <div className='header'>
@@ -27,6 +33,9 @@ const Header = ({ displayName, getSignInInfo, hidden }) => {
             <Link className='option' to='/shop'>
                SHOP
             </Link>
+            <Link className='option' to='/e-commerce/contact'>
+               CONTACT
+            </Link>
             {displayName ? (
                <Link to='/e-commerce/signin' onClick={handleLogout}>SIGN-OUT</Link>
             ) : (
@@ -34,11 +43,8 @@ const Header = ({ displayName, getSignInInfo, hidden }) => {
                   SIGN-IN
                </Link>
             )}
-            <Link className='option' to='/e-commerce/contact'>
-               CONTACT
-            </Link>
-            <Link className='option' to='/e-commerce/checkout'><CartIcon /></Link>
-            {!hidden ? null : <CartDropdown />}
+            <Link className='option' to='/e-commerce/checkout' onMouseOver={handleHover}><CartIcon /></Link>
+            {hide ? <CartDropdown cartItems={cartItems}/>: null }
          </div>
       </div>
    )

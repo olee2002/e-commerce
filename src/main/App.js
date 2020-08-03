@@ -41,6 +41,7 @@ function App() {
         <Route exact path='/' component={HomePage} />
         <Route exact path='/e-commerce' component={HomePage} />
         <Route exact path='/shop' component={ShopPage} />
+        <Route exact path='/shop/:collectionId' component={ShopPage} />
         <Route exact path='/e-commerce/signin' render={()=><SignInAndSignUpPage getSignInInfo={getSignInInfo} />} /> 
         <Route exact path='/e-commerce/contact' component={Contact} />
         <Route exact path='/e-commerce/checkout' component={CheckoutPage} />
