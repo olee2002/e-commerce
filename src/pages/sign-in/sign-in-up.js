@@ -5,10 +5,10 @@ import SignUp from '../../components/sign-up/sign-up';
 
 import './sign-in.scss';
 
-const SignInAndSignUpPage = ({ getSignInInfo }) => (
+const SignInAndSignUpPage = ({ displayName, getSignInInfo }) => (
   <div className='sign-in-and-sign-up'>
     <SignIn getSignInInfo={getSignInInfo} />
-    <SignUp />
+    {!displayName && <SignUp />}
   </div>
 );
 

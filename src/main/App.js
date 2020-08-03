@@ -42,7 +42,7 @@ function App() {
         <Route exact path='/e-commerce' component={HomePage} />
         <Route exact path='/e-commerce/shop' component={ShopPage} />
         <Route exact path='/e-commerce/shop/:collectionId' component={ShopPage} />
-        <Route exact path='/e-commerce/signin' render={()=><SignInAndSignUpPage getSignInInfo={getSignInInfo} />} /> 
+        <Route exact path='/e-commerce/signin' render={()=><SignInAndSignUpPage displayName={displayName} getSignInInfo={getSignInInfo} />} /> 
         <Route exact path='/e-commerce/contact' component={Contact} />
         <Route exact path='/e-commerce/checkout' component={CheckoutPage} />
       </Switch>
@@ -50,15 +50,4 @@ function App() {
   );
 }
 
-const mapStateToProps = createStructuredSelector({
-   currentUser: selectCurrentUser
- });
- 
- const mapDispatchToProps = dispatch => ({
-   setCurrentUser: user => dispatch(setCurrentUser(user))
- });
- 
- export default connect(
-   mapStateToProps,
-   mapDispatchToProps
- )(App);
+export default App;

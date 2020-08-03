@@ -12,11 +12,22 @@ const SignIn = ({ getSignInInfo }) => {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
    const history = useHistory();  
+   const tommy= auth.signInWithEmailAndPassword('tommy@gmail.com', '123456');
+   console.log('tommy', tommy)
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
+   const { email, password } = this.state;
     event.preventDefault();
-    getSignInInfo();
-    history.push('/')
+    console.log('who1')
+   //  try {
+   //    console.log('who1')
+   //   const who= await auth.signInWithEmailAndPassword(email, password);
+   //   console.log('who', who)
+   //    // await getSignInInfo();
+   //    // await history.push('/')
+   //  } catch (error) {
+   //    console.log(error);
+   //  }
   };
 
   const handleGoogleSignIn = async () => {
@@ -39,7 +50,7 @@ const SignIn = ({ getSignInInfo }) => {
         <h2>I already have an account</h2>
         <span>Sign in with your email and password</span>
 
-        <form onSubmit={handleSubmit}>
+        <form>
           <FormInput
             name='email'
             type='email'
@@ -57,12 +68,12 @@ const SignIn = ({ getSignInInfo }) => {
             required
           />
            <div className='buttons'>
-          <CustomButton type='submit'> Sign in </CustomButton>
+          <CustomButton type='submit' onClick={handleSubmit}> Sign in </CustomButton>
           <CustomButton onClick={handleGoogleSignIn} isGoogleSignIn type='submit'>
               Sign in with Google
             </CustomButton>
             </div>
-        </form>
+        </form>      
       </div>
     );
 }
