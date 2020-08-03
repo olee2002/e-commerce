@@ -18,9 +18,14 @@ const Header = ({ displayName, getSignInInfo, hidden }) => {
       auth.signOut();
       alert('Signing you out!');
    }
-   const handleHover = ()=>{
+   const handleMouseOver = ()=>{
       return cartItems && cartItems.length===0 && setHide(true);
    }
+
+   const handleCancel = ()=>{
+      setHide(false);
+   }
+  
    return (
       <div className='header'>
          <Link className='logo-container' to='/'>
@@ -43,8 +48,12 @@ const Header = ({ displayName, getSignInInfo, hidden }) => {
                   SIGN-IN
                </Link>
             )}
-            <Link className='option' to='/e-commerce/checkout' onMouseOver={handleHover}><CartIcon /></Link>
-            {hide ? <CartDropdown cartItems={cartItems}/>: null }
+            <Link 
+            className='option' 
+            to='/e-commerce/checkout' 
+            onMouseOver={handleMouseOver}
+            ><CartIcon /></Link>
+            {hide ? <CartDropdown cartItems={cartItems} handleCancel={handleCancel} />: null }
          </div>
       </div>
    )

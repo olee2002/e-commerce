@@ -16,6 +16,14 @@
     margin: 50px auto;
   }
 
+  .cart-cancel {
+   height: 20px;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+   cursor: pointer;
+ }
+
   .cart-items {
     height: 240px;
     display: flex;
