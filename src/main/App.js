@@ -17,13 +17,16 @@ import { setCurrentUser } from '../redux/user/user.actions';
 import { selectCurrentUser } from '../redux/user/user.selectors';
 
 function App() {
-   const [currentUser, setCurrentUser]=useState('')
    const [displayName, setDisplayName]=useState('');
+   const { currentUser } = auth;
 
    useEffect(()=>{
       // check if user is already logged in and display it in header
       auth.onAuthStateChanged((user) =>{
-         user && setDisplayName(user.displayName);
+         const getUsername=user && user.email.split('@')[0];
+         const userName = getUsername && getUsername.replace(/(^\w|\s\w)/g, m => m.toUpperCase());
+         console.log(user)
+         user && setDisplayName(user.displayName || userName);
       })
    })
 

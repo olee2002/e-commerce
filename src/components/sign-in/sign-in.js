@@ -12,26 +12,22 @@ const SignIn = ({ getSignInInfo }) => {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
    const history = useHistory();  
-   const tommy= auth.signInWithEmailAndPassword('tommy@gmail.com', '123456');
-   console.log('tommy', tommy)
 
   const handleSubmit = async event => {
    const { email, password } = this.state;
     event.preventDefault();
-    console.log('who1')
-   //  try {
-   //    console.log('who1')
-   //   const who= await auth.signInWithEmailAndPassword(email, password);
-   //   console.log('who', who)
-   //    // await getSignInInfo();
-   //    // await history.push('/')
-   //  } catch (error) {
-   //    console.log(error);
-   //  }
+    try {
+     const who= await auth.signInWithEmailAndPassword(email, password);
+     console.log('who', who)
+      // await getSignInInfo();
+      // await history.push('/')
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const handleGoogleSignIn = async () => {
-   const displayName = await signInWithGoogle();
+  const handleGoogleSignIn = () => {
+   const displayName = signInWithGoogle();
    getSignInInfo(displayName);
    history.push('/')
   }
