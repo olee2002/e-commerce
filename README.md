@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-Make sure to add firebase config profile to src/firebase/firebase.utils.js (You have to create your own profile on firebase)
+Make sure to add firebase config profile to src/firebase/firebase.utils.js (You have to create your own profile on firebase in order to run this app.)
 
 ```const config = {
    apiKey: "AIza......yPcXg",
