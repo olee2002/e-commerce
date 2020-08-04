@@ -7,6 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 Make sure to add firebase config profile to src/firebase/firebase.utils.js
+
 ```const config = {
    apiKey: "AIza......yPcXg",
    authDomain: "shopping-cart-2479c.firebaseapp.com",
@@ -16,7 +17,8 @@ Make sure to add firebase config profile to src/firebase/firebase.utils.js
    messagingSenderId: "630143016029",
    appId: "1:630143016029:web:16d38f1604356f807ac1b4",
    measurementId: "G-9S5S9ZKGVG"
-}```
+}
+```
 
 In the project directory, you can run:
 
