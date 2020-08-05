@@ -3,13 +3,13 @@
   display: flex;
   min-height: 100px;
   border-bottom: 1px solid darkgrey;
-  padding: 15px 0;
   font-size: 20px;
   align-items: center;
 
   .image-container {
-    width: 23%;
-    padding-right: 15px;
+   width: 15%;
+   padding-top: 6.5px;
+    padding-right: 3em;
 
     img {
       width: 100%;

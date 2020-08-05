@@ -1,11 +1,8 @@
 import React from 'react';
 
-import SignIn from '../../components/sign-in/sign-in';
-import SignUp from '../../components/sign-up/sign-up';
-
 import './contact.scss';
 
-const SignInAndSignUpPage = ({ getSignInInfo }) => (
+const Contact = ({ getSignInInfo }) => (
   <div className='contact'>
      <div className='line'/>
      <img className='cat-box' style={{width: 600}} src="./black-cat.jpg"/>
@@ -14,4 +11,4 @@ const SignInAndSignUpPage = ({ getSignInInfo }) => (
   </div>
 );
 
-export default SignInAndSignUpPage;
+export default Contact;
