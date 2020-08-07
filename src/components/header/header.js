@@ -19,7 +19,7 @@ const Header = ({ displayName, getSignInInfo, hidden }) => {
       alert('Signing you out!');
    }
    const handleMouseOver = ()=>{
-      return cartItems && cartItems.length===0 && setHide(true);
+      return !window.location.pathname.includes('checkout') && setHide(true);
    }
 
    const handleCancel = ()=>{
@@ -52,8 +52,10 @@ const Header = ({ displayName, getSignInInfo, hidden }) => {
             className='option' 
             to='/e-commerce/checkout' 
             onMouseOver={handleMouseOver}
-            ><CartIcon /></Link>
-            {hide ? <CartDropdown cartItems={cartItems} handleCancel={handleCancel} />: null }
+            >
+            <CartIcon />
+            </Link>
+            {hide ? <CartDropdown cartItems={cartItems} handleCancel={handleCancel} /> : null }
          </div>
       </div>
    )
