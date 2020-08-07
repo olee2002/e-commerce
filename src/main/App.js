@@ -31,6 +31,7 @@ function App() {
    const getSignInInfo=(displayName)=>{
       setDisplayName(displayName);
    }
+   
    useEffect(()=>{
       getSignInInfo(displayName);
    },[displayName]);
