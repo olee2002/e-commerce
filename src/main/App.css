@@ -7,3 +7,8 @@ body {
    text-decoration: none;
    color: black;
  }
+
+ button,
+ a:focus {
+   outline: none !important;
+   }
