@@ -19,7 +19,7 @@ const Header = ({ displayName, getSignInInfo, hidden }) => {
       alert('Signing you out!');
    }
    const handleMouseOver = ()=>{
-      return window.location.pathname.includes('checkout') && setHide(true);
+      return !window.location.pathname.includes('checkout') && setHide(true);
    }
 
    const handleCancel = ()=>{

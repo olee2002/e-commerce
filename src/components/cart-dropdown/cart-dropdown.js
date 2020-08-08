@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import CustomButton from '../custom-button/custom-button'
 import CartItem from '../cart-item/cart-item'
@@ -8,7 +9,11 @@ import { toggleCartHidden } from '../../redux/cart/cart.actions.js'
 
 import './cart-dropdown.styles.scss'
 
-const CartDropdown = ({ cartItems, history, dispatch, handleCancel }) => (
+const CartDropdown = ({ cartItems, history, dispatch, handleCancel }) => {
+   
+   const item = useSelector(state=>console.log(state.cart))
+   
+   return (
    <div className='cart-dropdown' onMouseLeave={handleCancel} style={{ height: cartItems && cartItems.length> 3 ? '490px':'400px' }}>
       <div className='cart-cancel' onClick={handleCancel}>
          X
@@ -16,7 +21,7 @@ const CartDropdown = ({ cartItems, history, dispatch, handleCancel }) => (
       <div className='cart-items'>
          {cartItems && cartItems.length > 0 && (
             <div className='message'>
-               You have <strong>{cartItems.length}</strong> item(s) in your
+               You have <strong>{cartItems.map(item=>item.quantity).reduce((a,b)=>a+b)}</strong> item(s) in your
                shopping cart.
             </div>
          )}
@@ -32,6 +37,6 @@ const CartDropdown = ({ cartItems, history, dispatch, handleCancel }) => (
          <CustomButton onClick={handleCancel}>GO TO CHECKOUT</CustomButton>
       </Link>
    </div>
-)
+)}
 
 export default CartDropdown
