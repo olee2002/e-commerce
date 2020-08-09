@@ -14,13 +14,9 @@ const SignIn = ({ getSignInInfo }) => {
    const history = useHistory();  
 
   const handleSubmit = async event => {
-   const { email, password } = this.state;
     event.preventDefault();
     try {
-     const who= await auth.signInWithEmailAndPassword(email, password);
-     console.log('who', who)
-      // await getSignInInfo();
-      // await history.push('/')
+     await auth.signInWithEmailAndPassword(email, password);
     } catch (error) {
       console.log(error);
     }
