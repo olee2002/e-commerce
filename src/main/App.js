@@ -31,7 +31,7 @@ function App() {
    const getSignInInfo=(displayName)=>{
       setDisplayName(displayName);
    }
-   
+
    useEffect(()=>{
       getSignInInfo(displayName);
    },[displayName]);
@@ -47,6 +47,7 @@ function App() {
         <Route exact path='/e-commerce/signin' render={()=><SignInAndSignUpPage displayName={displayName} getSignInInfo={getSignInInfo} />} /> 
         <Route exact path='/e-commerce/contact' component={Contact} />
         <Route exact path='/e-commerce/checkout' component={CheckoutPage} />
+        <Route path='*' component={HomePage} />
       </Switch>
     </div>
   );
