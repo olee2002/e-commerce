@@ -50,6 +50,6 @@ const CheckoutPage = () => {
          <StripeCheckoutButton price={total}/>
       </div>
    )
-}
+} 
 
 export default CheckoutPage
