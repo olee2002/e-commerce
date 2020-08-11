@@ -11,8 +11,7 @@ const CollectionItem = (props) => {
    const dispatch = useDispatch()
    const cartItems = useSelector((state) => state.cart.cartItems)
    const { id, name, price, imageUrl } = props.item
-   const isSelected =
-      cartItems && cartItems[0] && cartItems.map((item) => item.id).includes(id)
+   const isSelected = cartItems && cartItems[0] && cartItems.map((item) => item.id).includes(id)
    return (
       <div className='collection-item'>
          <div
