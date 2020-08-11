@@ -19,6 +19,7 @@ const SignIn = ({ getSignInInfo }) => {
      await auth.signInWithEmailAndPassword(email, password);
     } catch (error) {
       console.log(error);
+      alert('Incorrect user information, please try again!')
     }
   };
 

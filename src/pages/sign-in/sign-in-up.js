@@ -10,7 +10,6 @@ import './sign-in.scss';
 const SignInAndSignUpPage = ({ displayName, getSignInInfo }) => {
    const { currentUser } = auth;
    const history = useHistory();
-   console.log('auth user', currentUser)
    if(currentUser && currentUser.email){
       console.log('currentUser.email',currentUser.email)
       history.push('/e-commerce')
