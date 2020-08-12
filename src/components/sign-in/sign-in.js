@@ -32,9 +32,9 @@ const SignIn = ({ getSignInInfo }) => {
   const handleChange = event => {
     const { value, name } = event.target;
     if(name==='email'){
-       setEmail(event.target.value)
+       setEmail(value)
     } else {
-       setPassword(event.target.value)
+       setPassword(value)
     }
   };
 
