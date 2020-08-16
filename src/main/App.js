@@ -23,7 +23,6 @@ function App() {
       auth.onAuthStateChanged((user) =>{
          const getUsername=user && user.email.split('@')[0];
          const userName = getUsername && getUsername.replace(/(^\w|\s\w)/g, m => m.toUpperCase());
-         console.log(user)
          user && setDisplayName(user.displayName || userName);
       })
    })
