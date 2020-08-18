@@ -14,10 +14,10 @@ import './cart-dropdown.styles.scss'
 
 const CartDropdown = ({ cartItems, handleCancel }) => {
    const dispatch = useDispatch();
-   const item = useSelector(state=>console.log(state.cart))
+   const item = useSelector(state=>state.cart)
    
    return (
-   <div className='cart-dropdown' onMouseLeave={handleCancel} style={{ height: cartItems && cartItems.length> 3 ? '490px':'400px' }}>
+   <div className='cart-dropdown' onMouseLeave={handleCancel} style={{ height: cartItems && cartItems.length> 3 ? '490px':'380px' }}>
       <div className='cart-items'>
          {cartItems && cartItems.length > 0 && (
             <div className='message'>
