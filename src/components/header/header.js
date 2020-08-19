@@ -33,7 +33,7 @@ const Header = ({ displayName, getSignInInfo, hidden }) => {
          </Link>
          <div className='options'>
             <div className='option' to='/e-commerce/signin'>
-               {displayName && `Welcome ${displayName}!`}
+               {displayName ? `Welcome ${displayName}!`: null}
             </div>
             <Link className='option' to='/e-commerce/shop'>
                SHOP
