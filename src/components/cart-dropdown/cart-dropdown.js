@@ -17,7 +17,7 @@ const CartDropdown = ({ cartItems, handleCancel }) => {
    const item = useSelector(state=>state.cart)
    
    return (
-   <div className='cart-dropdown' onMouseLeave={handleCancel} style={{ height: cartItems && cartItems.length> 3 ? '480px':'300px' }}>
+   <div className='cart-dropdown' onMouseLeave={handleCancel} style={{ height: cartItems && cartItems.length> 2 ? '440px':'300px' }}>
       <div className='cart-items'>
          {cartItems && cartItems.length > 0 && (
             <div className='message'>
