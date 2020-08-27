@@ -25,7 +25,7 @@ const CartDropdown = ({ cartItems, handleCancel }) => {
                shopping cart.
             </div>
          )}
-         {cartItems.length ? (
+         {cartItems && cartItems.length > 0 ? (
             cartItems.map((cartItem) => (
                <div className='container'>
                <CartItem key={cartItem.id} item={cartItem} />
