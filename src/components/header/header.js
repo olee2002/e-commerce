@@ -45,7 +45,7 @@ const Header = ({ displayName, getSignInInfo, hidden }) => {
                <Link to='/e-commerce/signin' onClick={handleLogout}>SIGN-OUT</Link>
             ) : (
                <Link className='option' to='/e-commerce/signin'>
-                  SIGN-IN
+                  SIGN-IN/REGISTER
                </Link>
             )}
             <Link 
