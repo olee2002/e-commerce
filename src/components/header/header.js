@@ -61,4 +61,4 @@ const Header = ({ displayName, getSignInInfo, hidden }) => {
    )
 }
 
-export default Header
+export default Header;

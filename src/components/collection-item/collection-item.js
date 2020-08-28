@@ -12,6 +12,8 @@ const CollectionItem = (props) => {
    const cartItems = useSelector((state) => state.cart.cartItems)
    const { id, name, price, imageUrl } = props.item
    const isSelected = cartItems && cartItems[0] && cartItems.map((item) => item.id).includes(id)
+   const currentItem = cartItems.find(item=>item.id === id);
+
    return (
       <div className='collection-item'>
          <div
@@ -25,7 +27,7 @@ const CollectionItem = (props) => {
             <span className='price'>{price}</span>
          </div>
          <CustomButton onClick={() => dispatch(addItem(props.item))} inverted>
-            {isSelected ? 'Added' : 'Add'} to cart{' '}
+            {isSelected ? `${currentItem.quantity} ${currentItem.quantity===1 ? 'Item' : 'Items' } Added` : 'Add'} to cart{' '}
             {isSelected ? (
                <CheckCircleOutlineIcon
                   style={{ color: 'green', marginLeft: '5px' }}

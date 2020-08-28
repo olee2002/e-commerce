@@ -28,7 +28,7 @@ const CartDropdown = ({ cartItems, handleCancel }) => {
          {cartItems && cartItems.length > 0 ? (
             cartItems.map((cartItem) => (
                <div className='container'>
-               <CartItem key={cartItem.id} item={cartItem} />
+               <CartItem key={cartItem.id} item={cartItem}/>
                <strong className='cursor' onClick={() => dispatch(clearItemFromCart(cartItem))}>X</strong>
                </div>
             ))
