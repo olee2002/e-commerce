@@ -17,8 +17,10 @@ const SignInAndSignUpPage = ({ displayName, getSignInInfo }) => {
    }
    return (
       <div className='sign-in-and-sign-up'>
-         <button className='toggle-btn' onClick={() => setRegister(!register)}>{!register ?'Register' :'SignIn'}</button>
-         <div>
+         <button className='flex-self' onClick={() => setRegister(!register)}>
+            {!register ? 'Register' : 'SignIn'}
+         </button>
+         <div className='flex-self'>
             {!register ? <SignIn getSignInInfo={getSignInInfo} /> : <SignUp />}
          </div>
       </div>
