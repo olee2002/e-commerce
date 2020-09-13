@@ -1,6 +1,5 @@
 body {
    font-family: 'Open Sans Condensed';
-   padding: 20px 40px;
  }
  
  a {
@@ -12,3 +11,9 @@ body {
  a:focus {
    outline: none !important;
    }
+
+  .page-layout {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+  }

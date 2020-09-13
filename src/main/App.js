@@ -36,7 +36,7 @@ function App() {
    },[displayName]);
 
   return (
-    <div>
+    <div className='page-layout'>
       <Header displayName={displayName} getSignInInfo={getSignInInfo} />
       <Switch>
         <Route exact path='/' component={HomePage} />
