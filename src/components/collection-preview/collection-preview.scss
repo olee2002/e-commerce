@@ -5,7 +5,7 @@
  
    .title {
      font-size: 28px;
-     margin-bottom: 25px;
+     margin-bottom: 20px;
    }
  
    .preview {
@@ -14,3 +14,15 @@
      flex-wrap: wrap;
    }
  }
+
+ @media (max-width: 700px) {
+   .title {
+      margin-left: 20px;
+    }
+  
+   .preview {
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+}
