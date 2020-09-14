@@ -1,31 +1,36 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
-import CartIcon from '../cart-icon/cart-icon';
-import CartDropdown from '../cart-dropdown/cart-dropdown';
+import CartIcon from '../cart-icon/cart-icon'
+import CartDropdown from '../cart-dropdown/cart-dropdown'
 import { ReactComponent as Logo } from '../../assets/crown.svg'
 import { auth } from '../../firebase/firebase.utils'
 
 import './header.scss'
 
-const Header = ({ displayName, getSignInInfo, hidden }) => {
-   const cartItems = useSelector(state=>state.cart.cartItems);
-   const [ hide, setHide ] = useState(false);
+const Header = ({ displayName, getSignInInfo }) => {
+   const cartItems = useSelector((state) => state.cart.cartItems)
+   const [hide, setHide] = useState(false)
    const handleLogout = () => {
-      localStorage.clear();
-      getSignInInfo('');
-      auth.signOut();
-      alert('Signing you out!');
+      localStorage.clear()
+      getSignInInfo('')
+      auth.signOut()
+      alert('Signing you out!')
    }
-   const handleMouseOver = ()=>{
-      return !window.location.pathname.includes('checkout') && setHide(true);
+   const handleMouseOver = () => {
+      return !window.location.pathname.includes('checkout') && setHide(true)
    }
 
-   const handleCancel = ()=>{
-      setHide(false);
+   const handleCancel = () => {
+      setHide(false)
    }
-  
+   useEffect(() => {
+      if (window.innerWidth < 700) {
+         setHide(false)
+      }
+   })
+
    return (
       <div className='header'>
          <Link className='logo-container' to='/e-commerce'>
@@ -33,7 +38,7 @@ const Header = ({ displayName, getSignInInfo, hidden }) => {
          </Link>
          <div className='options'>
             <div className='option' to='/e-commerce/signin'>
-               {displayName ? `Welcome ${displayName}!`: null}
+               {displayName ? `Welcome ${displayName}!` : null}
             </div>
             <Link className='option' to='/e-commerce/shop'>
                SHOP
@@ -42,23 +47,29 @@ const Header = ({ displayName, getSignInInfo, hidden }) => {
                CONTACT
             </Link>
             {displayName ? (
-               <Link to='/e-commerce/signin' onClick={handleLogout}>SIGN-OUT</Link>
+               <Link to='/e-commerce/signin' onClick={handleLogout}>
+                  SIGNOUT
+               </Link>
             ) : (
                <Link className='option' to='/e-commerce/signin'>
-                  SIGN-IN/REGISTER
+                  SIGNIN
                </Link>
             )}
-            <Link 
-            className='option' 
-            to='/e-commerce/checkout' 
-            onMouseOver={handleMouseOver}
-            >
-            <CartIcon />
+            <Link
+               className='option'
+               to='/e-commerce/checkout'
+               onMouseOver={handleMouseOver}>
+               <CartIcon />
             </Link>
-            {hide ? <CartDropdown cartItems={cartItems} handleCancel={handleCancel} /> : null }
+            {hide ? (
+               <CartDropdown
+                  cartItems={cartItems}
+                  handleCancel={handleCancel}
+               />
+            ) : null}
          </div>
       </div>
    )
 }
 
-export default Header;
+export default Header

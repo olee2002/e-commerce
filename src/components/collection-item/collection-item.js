@@ -27,7 +27,7 @@ const CollectionItem = (props) => {
             <span className='price'>{price}</span>
          </div>
          <CustomButton onClick={() => dispatch(addItem(props.item))} inverted>
-            {isSelected ? `${currentItem.quantity} ${currentItem.quantity===1 ? 'Item' : 'Items' } Added` : 'Add'} to cart{' '}
+            {isSelected ? `${currentItem.quantity} ${currentItem.quantity===1 ? 'Item' : 'Items' } Added` : 'Add to cart'}
             {isSelected ? (
                <CheckCircleOutlineIcon
                   style={{ color: 'green', marginLeft: '5px' }}
