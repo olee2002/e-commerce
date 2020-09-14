@@ -36,6 +36,7 @@ const CheckoutPage = () => {
                <span>Remove</span>
             </div>
          </div>
+         <div className='cart-items'>
          {cartItems ? (
             cartItems.length > 0 &&
             cartItems.map((cartItem) => (
@@ -46,6 +47,7 @@ const CheckoutPage = () => {
                Current No Item is selected. Please go back to the shop page!
             </div>
          )}
+         </div>
          <div className='total'>TOTAL: ${total}</div>
          <StripeCheckoutButton price={total}/>
       </div>
