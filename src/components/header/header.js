@@ -65,6 +65,7 @@ const Header = ({ displayName, getSignInInfo }) => {
                <CartDropdown
                   cartItems={cartItems}
                   handleCancel={handleCancel}
+                  onMouseOver={handleMouseOver}
                />
             ) : null}
          </div>
